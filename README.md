@@ -16,21 +16,11 @@ the *Grammar of Graphics*.
 
 [![Wealth of Nations](./wealth-of-nations.gif)](https://github.com/bqplot/bqplot/blob/master/examples/Applications/Wealth%20Of%20Nations/Bubble%20Chart.ipynb)
 
-In bqplot, every component of a plot is an interactive widget. This allows the
-user to integrate visualizations with other Jupyter interactive widgets to
-create integrated GUIs with a few lines of Python code.
+In bqplot, every component of a plot is an interactive widget. This allows the user to integrate visualizations with other Jupyter interactive widgets to create rich dashboards with a few lines of Python code.
 
-## Goals
-
--   Provide a unified framework for 2-D visualizations with a pythonic API
--   Provide a sensible API for adding user interactions (panning, zooming, selection, etc)
-
-Two APIs are provided
-
-- `Object Model`, which
-  is inspired by the constructs of the Grammar of Graphics (figure, marks, axes,
-  scales). This API is verbose but is fully customizable
-- `pyplot`, which is a context-based API similar to Matplotlib's pyplot. `pyplot` provides sensible default choices for most parameters
+Two plotting APIs are provided in `bqplot`
+- `pyplot` Context-based API similar to Matplotlib's pyplot. `pyplot` provides sensible default choices for most parameters and should be the right starting point for newcomers to bqplot
+- `Object Model` Object-oriented API inspired by the constructs of the Grammar of Graphics (figure, marks, axes, scales). This API is for advanced users who want full customization and control.
 
 ## Trying it online
 
@@ -127,15 +117,119 @@ Every time you make a change on your tests it's necessary to rebuild the JS side
 yarn run build
 ```
 
-## Examples
+## Usage
 
-### Using the `pyplot` API
+### Pyplot
 
+```python
+import bqplot.pyplot as plt
+import numpy as np
+
+# step1: create a figure
+fig = plt.figure(title="Random Walk")
+
+# step2: Add a few marks (they'll be added to the same figure)
+x = np.arange(100) # data attribute x
+y = np.cumsum(np.random.randn(100)) # data attribute y
+plt.plot(x, y) # line mark
+
+# render the figure
+fig
+```
 [![Pyplot Screenshot](/pyplot.png)](https://github.com/bqplot/bqplot/blob/master/examples/Basic%20Plotting/Pyplot.ipynb)
 
-### Using the `Object Model` API
+### Object Model
+```python
+from bqplot import LinearScale, Axis, Lines, Bars, Figure
 
-[![Bqplot Screenshot](/bqplot.png)](https://github.com/bqplot/bqplot/blob/master/examples/Advanced%20Plotting/Advanced%20Plotting.ipynb)
+# create scales 
+xs = LinearScale()
+ys = LinearScale()
+
+# data attributes
+x = np.arange(10)
+y1 = np.random.rand(10)
+y2 = y1 * 2
+
+# create marks
+line = Lines(x=x, y=y1, scales={"x": xs, "y": ys}, colors=["blue"], 
+             marker="square", display_legend=True, labels=["Line"])
+bar = Bars(
+    x=x, y=y2, scales={"x": xs, "y": ys}, colorpadding=0.2, 
+    colors=["salmon"], display_legend=True, labels=["Bar"]
+)
+
+# create axes
+xax = Axis(scale=xs, label="X", grid_lines="none")
+yax = Axis(
+    scale=ys, orientation="vertical", tick_format="0.1f", label="Y", grid_lines="solid"
+)
+
+# create a figure and render it
+Figure(marks=[bar, line], axes=[xax, yax])
+```
+[![Bqplot Screenshot](/bqplot.png)](https://github.com/bqplot/bqplot/blob/master/examples/Marks/Object%20Model/Lines.ipynb)
+
+### Dashboards
+`bqplot` can be seamlessly integrated with `ipywidgets` to build rich interactive dashboards. Since `bqplot` uses the same messaging protocols as `ipywidgets`, traits of each can be linked using the `link` or `observe` methods (of `ipywidgets`). Below is a simple example which shows how to use a slider to control the number of bins in a histogram.
+```python
+import ipywidgets
+import bqplot.pyplot as plt
+import numpy as np
+
+bins_slider = ipywidgets.IntSlider(description="bins", value=20)
+fig = plt.figure()
+hist_mark = plt.hist(np.random.randn(1000), bins=20)
+plt.grids(fig, "none")
+
+# link the slider's value attribute to the histogram's bins attribute
+_ = ipywidgets.jslink((bins_slider, "value"), (hist_mark, "bins"))
+
+# render the slider and the figure vertically using VBox
+ipywidgets.VBox([bins_slider, fig])
+```
+![Bqplot Screenshot](/dashboard.gif)
+
+Examples of sophisticated interactive dashboards can be found in the `bqplot-gallery` [repo](https://github.com/bqplot/bqplot-gallery/tree/main/notebooks)
+
+### Compound Plotting Widgets
+The object-oriented API of `bqplot` can be extended to create custom plotting widgets by sub-classing the `Figure` class. These widgets can be composed of custom `Lines`, `Scatter` or other marks as needed. The attributes of composed marks, scales and axes can be modified as needed by accessing them directly.
+
+Below is an example of creating a standalone `Circle` widget.
+```python
+import ipywidgets
+class Circle(Figure):
+    def __init__(self, *args, **kwargs):
+        super(Figure, self).__init__(*args, **kwargs)
+        fill_color = kwargs.get("fill_color", "green")
+        self.layout = ipywidgets.Layout(
+            width="100px",
+            height="100px")
+        self.fig_margin = dict(top=5, bottom=5, left=5, right=5)
+        
+        self.scales = {"x": LinearScale(), "y": LinearScale()}
+        x = np.linspace(-1, 1, 500)
+        y = np.sqrt(1 - x ** 2)
+        self.circle = Lines(x=x, y=[-y, y], 
+                            colors=[fill_color],
+                            scales=self.scales,
+                            fill="inside")
+        self.marks = [self.circle]
+```
+
+Once the widget is created, we can use it to create custom layouts. Below is an example of traffic lights created from 3 `Circle` widgets.
+
+```python
+traffic_lights = ipywidgets.VBox([
+    Circle(fill_color="red"),
+    Circle(fill_color="orange"),
+    Circle(fill_color="green")])
+
+traffic_lights
+```
+<img src="plotting_widgets.png" style="width: 75px"/>
+
+Some examples of plotting widgets bundled with `bqplot` can be found [here]
 
 ## Documentation
 
