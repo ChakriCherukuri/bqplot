@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bqplot.marks.Bars &mdash; bqplot 0.12.30 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = "div.jupyter_cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = "div.cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="bqplot.marks.Graph" href="bqplot.marks.Graph.html" />
+    <link rel="prev" title="bqplot.marks.Hist" href="bqplot.marks.Hist.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> bqplot
+          </a>
+              <div class="version">
+                0.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_documentation.html">API Reference Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api_documentation.html#bqplot-package">BQPlot Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#figure">Figure</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api_documentation.html#marks">Marks</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Mark.html">bqplot.marks.Mark</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Lines.html">bqplot.marks.Lines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.FlexLine.html">bqplot.marks.FlexLine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Scatter.html">bqplot.marks.Scatter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Hist.html">bqplot.marks.Hist</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">bqplot.marks.Bars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Graph.html">bqplot.marks.Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.GridHeatMap.html">bqplot.marks.GridHeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.HeatMap.html">bqplot.marks.HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Label.html">bqplot.marks.Label</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.OHLC.html">bqplot.marks.OHLC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Pie.html">bqplot.marks.Pie</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.marks.Map.html">bqplot.marks.Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#axes">Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#market-map">Market Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#interacts">Interacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#traits-types">Traits Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#toolbar">Toolbar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#pyplot">Pyplot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bqplot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../api_documentation.html">API Reference Documentation</a></li>
+      <li class="breadcrumb-item active">bqplot.marks.Bars</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_generate/bqplot.marks.Bars.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bqplot-marks-bars">
+<h1>bqplot.marks.Bars<a class="headerlink" href="#bqplot-marks-bars" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="bqplot.marks.Bars">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bqplot.marks.</span></span><span class="sig-name descname"><span class="pre">Bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bqplot/marks.html#Bars"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bqplot.marks.Bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bar mark.</p>
+<p>In the case of the Bars mark, scales for ‘x’ and ‘y’  MUST be provided.
+The scales of other data attributes are optional. In the case where another
+data attribute than ‘x’ or ‘y’ is provided but the corresponding scale is
+missing, the data attribute is ignored.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.icon">
+<span class="sig-name descname"><span class="pre">icon</span></span><a class="headerlink" href="#bqplot.marks.Bars.icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>font-awesome icon for that mark</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string (class-level attribute)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#bqplot.marks.Bars.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>user-friendly name of the mark</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string (class-level attribute)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.color_mode">
+<span class="sig-name descname"><span class="pre">color_mode</span></span><a class="headerlink" href="#bqplot.marks.Bars.color_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify how default colors are applied to bars.
+The ‘group’ mode means colors are assigned per group. If the list
+of colors is shorter than the number of groups, colors are reused.
+The ‘element’ mode means colors are assigned per group element. If the list
+of colors is shorter than the number of bars in a group, colors are reused.
+The ‘no_group’ mode means colors are assigned per bar, discarding the fact
+that there are groups or stacks. If the list of colors is shorter than the
+total number of bars, colors are reused.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘auto’, ‘group’, ‘element’, ‘no_group’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.opacity_mode">
+<span class="sig-name descname"><span class="pre">opacity_mode</span></span><a class="headerlink" href="#bqplot.marks.Bars.opacity_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as the <cite>color_mode</cite> attribute, but for the opacity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘auto’, ‘group’, ‘element’, ‘no_group’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#bqplot.marks.Bars.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether 2-dimensional bar charts should appear grouped or stacked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘stacked’, ‘grouped’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.colors">
+<span class="sig-name descname"><span class="pre">colors</span></span><a class="headerlink" href="#bqplot.marks.Bars.colors" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of colors for the bars.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of colors (default: [‘steelblue’])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.orientation">
+<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#bqplot.marks.Bars.orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether the bar chart is drawn horizontally or vertically.
+If a horizontal bar chart is drawn, the x data is drawn vertically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘horizontal’, ‘vertical’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.padding">
+<span class="sig-name descname"><span class="pre">padding</span></span><a class="headerlink" href="#bqplot.marks.Bars.padding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attribute to control the spacing between the bars value is specified
+as a percentage of the width of the bar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float (default: 0.05)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><a class="headerlink" href="#bqplot.marks.Bars.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to fill the bars or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Bool (default: True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.stroke">
+<span class="sig-name descname"><span class="pre">stroke</span></span><a class="headerlink" href="#bqplot.marks.Bars.stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stroke color for the bars</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Color or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.stroke_width">
+<span class="sig-name descname"><span class="pre">stroke_width</span></span><a class="headerlink" href="#bqplot.marks.Bars.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stroke width of the bars</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Float (default: 0.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.opacities">
+<span class="sig-name descname"><span class="pre">opacities</span></span><a class="headerlink" href="#bqplot.marks.Bars.opacities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opacities for the bars. Defaults to 1 when the list is too
+short, or the element of the list is set to None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of floats (default: [])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.base">
+<span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#bqplot.marks.Bars.base" title="Permalink to this definition">¶</a></dt>
+<dd><p>reference value from which the bars are drawn. defaults to 0.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float (default: 0.0)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.align">
+<span class="sig-name descname"><span class="pre">align</span></span><a class="headerlink" href="#bqplot.marks.Bars.align" title="Permalink to this definition">¶</a></dt>
+<dd><p>alignment of bars with respect to the tick value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘center’, ‘left’, ‘right’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.label_display">
+<span class="sig-name descname"><span class="pre">label_display</span></span><a class="headerlink" href="#bqplot.marks.Bars.label_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether or not to display bar data labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool (default: False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.label_display_format">
+<span class="sig-name descname"><span class="pre">label_display_format</span></span><a class="headerlink" href="#bqplot.marks.Bars.label_display_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>format for displaying values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string (default: .2f)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.label_font_style">
+<span class="sig-name descname"><span class="pre">label_font_style</span></span><a class="headerlink" href="#bqplot.marks.Bars.label_font_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>CSS style for the text of each cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.label_display_vertical_offset">
+<span class="sig-name descname"><span class="pre">label_display_vertical_offset</span></span><a class="headerlink" href="#bqplot.marks.Bars.label_display_vertical_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>vertical offset value for the label display</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.label_display_horizontal_offset">
+<span class="sig-name descname"><span class="pre">label_display_horizontal_offset</span></span><a class="headerlink" href="#bqplot.marks.Bars.label_display_horizontal_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>horizontal offset value for the label display</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Data</span> <span class="pre">Attributes</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#bqplot.marks.Bars.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>abscissas of the data points (1d array)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray (default: [])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#bqplot.marks.Bars.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>ordinates of the values for the data points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray (default: [])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.color">
+<span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#bqplot.marks.Bars.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>color of the data points (1d array). Defaults to default_color when not
+provided or when a value is NaN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Notes</p>
+<dl class="simple">
+<dt>The fields which can be passed to the default tooltip are:</dt><dd><p>All the data attributes
+index: index of the bar being hovered on
+sub_index: if data is two dimensional, this is the minor index</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="bqplot.marks.Bars.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bqplot.marks.Bars.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Public constructor</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.__init__" title="bqplot.marks.Bars.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(**kwargs)</p></td>
+<td><p>Public constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_traits</span></code>(**traits)</p></td>
+<td><p>Dynamically add trait attributes to the Widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_trait_events</span></code>(name)</p></td>
+<td><p>Get a dict of all event handlers defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_traits</span></code>(**metadata)</p></td>
+<td><p>Get a dict of all the traitlets defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Close method.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close_all</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_manager_state</span></code>([drop_defaults, widgets])</p></td>
+<td><p>Returns the full state for a widget manager for embedding</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_state</span></code>([key, drop_defaults])</p></td>
+<td><p>Gets the widget state, or a piece of it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_view_spec</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Static method, called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_control_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Class method, called when the comm-open message on the &quot;jupyter.widget.control&quot; comm channel is received</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_trait</span></code>(name)</p></td>
+<td><p>Returns True if the object has a trait with the specified name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_sync</span></code>()</p></td>
+<td><p>Hold syncing any state until the outermost context manager exits</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_trait_notifications</span></code>()</p></td>
+<td><p>Context manager for bundling trait change notifications and cross validation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">notify_change</span></code>(change)</p></td>
+<td><p>Called when a property has changed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observe</span></code>(handler[, names, type])</p></td>
+<td><p>Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_background_click</span></code>(callback[, remove])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_click</span></code>(callback[, remove])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_element_click</span></code>(callback[, remove])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_hover</span></code>(callback[, remove])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_legend_click</span></code>(callback[, remove])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_legend_hover</span></code>(callback[, remove])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_msg</span></code>(callback[, remove])</p></td>
+<td><p>(Un)Register a custom msg receive callback.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_trait_change</span></code>([handler, name, remove])</p></td>
+<td><p>DEPRECATED: Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_widget_constructed</span></code>(callback)</p></td>
+<td><p>Registers a callback to be called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code>()</p></td>
+<td><p>Open a comm to the frontend if one isn't already open.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code>(content[, buffers])</p></td>
+<td><p>Sends a custom msg to the widget model in the front-end.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_state</span></code>([key])</p></td>
+<td><p>Sends the widget state, or a piece of it, to the front-end, if it exists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_state</span></code>(sync_data)</p></td>
+<td><p>Called when a state is received from the front-end.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_trait</span></code>(name, value)</p></td>
+<td><p>Forcibly sets trait attribute, including read-only attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_instance</span></code>(**kwargs)</p></td>
+<td><p>This is called <strong>before</strong> self.__init__ is called.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_defaults</span></code>(*names, **metadata)</p></td>
+<td><p>Return a trait's default value or a dictionary of them</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_events</span></code>([name])</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the event handlers of this class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_has_value</span></code>(name)</p></td>
+<td><p>Returns True if the specified trait has a value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_metadata</span></code>(traitname, key[, default])</p></td>
+<td><p>Get metadata values for trait by key.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_values</span></code>(**metadata)</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of trait names and their values.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve</span></code>(handler[, names, type])</p></td>
+<td><p>Remove a trait change handler.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve_all</span></code>([name])</p></td>
+<td><p>Remove trait change handlers of any type for the specified name.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.align" title="bqplot.marks.Bars.align"><code class="xref py py-obj docutils literal notranslate"><span class="pre">align</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_clip</span></code></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.base" title="bqplot.marks.Bars.base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code></a></p></td>
+<td><p>A float trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.color" title="bqplot.marks.Bars.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">color</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.color_mode" title="bqplot.marks.Bars.color_mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_mode</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.colors" title="bqplot.marks.Bars.colors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">colors</span></code></a></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">comm</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross_validation_lock</span></code></p></td>
+<td><p>A contextmanager for running a block with our cross validation lock set to True.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_legend</span></code></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable_hover</span></code></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.fill" title="bqplot.marks.Bars.fill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill</span></code></a></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.icon" title="bqplot.marks.Bars.icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icon</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">interactions</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></p></td>
+<td><p>The traits which are synced.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.label_display" title="bqplot.marks.Bars.label_display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_display</span></code></a></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.label_display_format" title="bqplot.marks.Bars.label_display_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_display_format</span></code></a></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.label_display_horizontal_offset" title="bqplot.marks.Bars.label_display_horizontal_offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_display_horizontal_offset</span></code></a></p></td>
+<td><p>A float trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.label_display_vertical_offset" title="bqplot.marks.Bars.label_display_vertical_offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_display_vertical_offset</span></code></a></p></td>
+<td><p>A float trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.label_font_style" title="bqplot.marks.Bars.label_font_style"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_font_style</span></code></a></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">labels</span></code></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mark_types</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_id</span></code></p></td>
+<td><p>Gets the model id of this widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.name" title="bqplot.marks.Bars.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.opacities" title="bqplot.marks.Bars.opacities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">opacities</span></code></a></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.opacity_mode" title="bqplot.marks.Bars.opacity_mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">opacity_mode</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.orientation" title="bqplot.marks.Bars.orientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orientation</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.padding" title="bqplot.marks.Bars.padding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">padding</span></code></a></p></td>
+<td><p>A float trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">preserve_domain</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">scales</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">scales_metadata</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selected</span></code></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selected_style</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.stroke" title="bqplot.marks.Bars.stroke"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stroke</span></code></a></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.stroke_width" title="bqplot.marks.Bars.stroke_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stroke_width</span></code></a></p></td>
+<td><p>A float trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip_location</span></code></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip_style</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.type" title="bqplot.marks.Bars.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unselected_style</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">visible</span></code></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widget_types</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widgets</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.marks.Bars.x" title="bqplot.marks.Bars.x"><code class="xref py py-obj docutils literal notranslate"><span class="pre">x</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.marks.Bars.y" title="bqplot.marks.Bars.y"><code class="xref py py-obj docutils literal notranslate"><span class="pre">y</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "bqplot/bqplot",
+            ref: "stable",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_generate"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bqplot.marks.Hist.html" class="btn btn-neutral float-left" title="bqplot.marks.Hist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bqplot.marks.Graph.html" class="btn btn-neutral float-right" title="bqplot.marks.Graph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015, Bloomberg LP.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

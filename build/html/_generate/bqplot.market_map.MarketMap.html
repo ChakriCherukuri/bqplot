@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bqplot.market_map.MarketMap &mdash; bqplot 0.12.30 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = "div.jupyter_cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = "div.cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="bqplot.interacts.BrushIntervalSelector" href="bqplot.interacts.BrushIntervalSelector.html" />
+    <link rel="prev" title="bqplot.axes.ColorAxis" href="bqplot.axes.ColorAxis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> bqplot
+          </a>
+              <div class="version">
+                0.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_documentation.html">API Reference Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api_documentation.html#bqplot-package">BQPlot Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#figure">Figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#marks">Marks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#axes">Axes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api_documentation.html#market-map">Market Map</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">bqplot.market_map.MarketMap</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#interacts">Interacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#traits-types">Traits Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#toolbar">Toolbar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#pyplot">Pyplot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bqplot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../api_documentation.html">API Reference Documentation</a></li>
+      <li class="breadcrumb-item active">bqplot.market_map.MarketMap</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_generate/bqplot.market_map.MarketMap.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bqplot-market-map-marketmap">
+<h1>bqplot.market_map.MarketMap<a class="headerlink" href="#bqplot-market-map-marketmap" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bqplot.market_map.</span></span><span class="sig-name descname"><span class="pre">MarketMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bqplot/market_map.html#MarketMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bqplot.market_map.MarketMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Waffle wrapped map.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.names">
+<span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elements can also be objects convertible to string
+primary key for the map data. A rectangle is created for each
+unique entry in this array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray of strings (default: [])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.groups">
+<span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>attribute on which the groupby is run. If this is an empty array, then
+there is no group by for the map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray (default: [])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.display_text">
+<span class="sig-name descname"><span class="pre">display_text</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.display_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>data to be displayed on each rectangle of the map.If this is empty it
+defaults to the names attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray or None(default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.ref_data">
+<span class="sig-name descname"><span class="pre">ref_data</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.ref_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional data associated with each element of the map. The data in
+this data frame can be displayed as a tooltip.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>pandas.DataDrame or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.color">
+<span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data to represent the color for each of the cells. If the value of the
+data is NaN for a cell, then the color of the cell is the color of the
+group it belongs to in absence of data for color</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray (default: [])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.scales">
+<span class="sig-name descname"><span class="pre">scales</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.scales" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the map has data being passed as color, then a corresponding color
+scale is required</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Dictionary of scales holding a scale for each data attribute</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.axes">
+<span class="sig-name descname"><span class="pre">axes</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.axes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ability to add an axis for the scales which are used to scale data
+represented in the map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>List of axes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.on_hover">
+<span class="sig-name descname"><span class="pre">on_hover</span></span><a class="reference internal" href="../_modules/bqplot/market_map.html#MarketMap.on_hover"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bqplot.market_map.MarketMap.on_hover" title="Permalink to this definition">¶</a></dt>
+<dd><p>This event is received when the mouse is hovering over a cell. Returns
+the data of the cell and the ref_data associated with the cell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>custom event</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.tooltip_widget">
+<span class="sig-name descname"><span class="pre">tooltip_widget</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.tooltip_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Widget to be displayed as the tooltip. This can be combined with the
+on_hover event to display the chart corresponding to the cell being
+hovered on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Instance of a widget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.tooltip_fields">
+<span class="sig-name descname"><span class="pre">tooltip_fields</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.tooltip_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>names of the fields from the ref_data dataframe which should be
+displayed in the tooltip.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.tooltip_formats">
+<span class="sig-name descname"><span class="pre">tooltip_formats</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.tooltip_formats" title="Permalink to this definition">¶</a></dt>
+<dd><p>formats for each of the fields for the tooltip data. Order should match
+the order of the tooltip_fields</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.freeze_tooltip_location">
+<span class="sig-name descname"><span class="pre">freeze_tooltip_location</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.freeze_tooltip_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>if True, freezes the location of the tooltip. If False, tootip will
+follow the mouse</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool (default: False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.show_groups">
+<span class="sig-name descname"><span class="pre">show_groups</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.show_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>attribute to determine if the groups should be displayed. If set to
+True, the finer elements are blurred</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Map</span> <span class="pre">Drawing</span> <span class="pre">Attributes</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.cols">
+<span class="sig-name descname"><span class="pre">cols</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.cols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suggestion for no of columns in the map.If not specified, value is
+inferred from the no of rows and no of cells</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.rows">
+<span class="sig-name descname"><span class="pre">rows</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>No of rows in the map.If not specified, value is inferred from the no
+of cells and no of columns.
+If both rows and columns are not specified, then a square is
+constructed basing on the no of cells.
+The above two attributes are suggestions which are respected unless
+they are not feasible. One required condition is that, the number of
+columns is odd when row_groups is greater than 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.row_groups">
+<span class="sig-name descname"><span class="pre">row_groups</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.row_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>No of groups the rows should be divided into. This can be used to draw
+more square cells for each of the groups</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Layout</span> <span class="pre">Attributes</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.map_margin">
+<span class="sig-name descname"><span class="pre">map_margin</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.map_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary containing the top, bottom, left and right margins. The user
+is responsible for making sure that the width and height are greater
+than the sum of the margins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict (default: {top=50, bottom=50, left=50, right=50})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.min_aspect_ratio">
+<span class="sig-name descname"><span class="pre">min_aspect_ratio</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.min_aspect_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>minimum width / height ratio of the figure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.max_aspect_ratio">
+<span class="sig-name descname"><span class="pre">max_aspect_ratio</span></span><a class="headerlink" href="#bqplot.market_map.MarketMap.max_aspect_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>maximum width / height ratio of the figure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Display Attributes</p>
+<dl class="simple">
+<dt>colors: list of colors</dt><dd><p>Colors for each of the groups which are cycled over to cover all the
+groups</p>
+</dd>
+<dt>title: string</dt><dd><p>Title of the Market Map</p>
+</dd>
+<dt>title_style: dict</dt><dd><p>CSS style for the title of the Market Map</p>
+</dd>
+<dt>stroke: color</dt><dd><p>Stroke of each of the cells of the market map</p>
+</dd>
+<dt>group_stroke: color</dt><dd><p>Stroke of the border for the group of cells corresponding to a group</p>
+</dd>
+<dt>selected_stroke: color</dt><dd><p>stroke for the selected cells</p>
+</dd>
+<dt>hovered_stroke: color</dt><dd><p>stroke for the cell being hovered on</p>
+</dd>
+<dt>font_style: dict</dt><dd><p>CSS style for the text of each cell</p>
+</dd>
+</dl>
+<p>Other Attributes</p>
+<dl class="simple">
+<dt>enable_select: bool</dt><dd><p>boolean to control the ability to select the cells of the map by
+clicking</p>
+</dd>
+<dt>enable_hover: bool</dt><dd><p>boolean to control if the map should be aware of which cell is being
+hovered on. If it is set to False, tooltip will not be displayed</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The aspect ratios stand for width / height ratios.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If the available space is within bounds in terms of min and max aspect
+ratio, we use the entire available space.</p></li>
+<li><p>If the available space is too oblong horizontally, we use the client
+height and the width that corresponds max_aspect_ratio (maximize width
+under the constraints).</p></li>
+<li><p>If the available space is too oblong vertically, we use the client width
+and the height that corresponds to min_aspect_ratio (maximize height
+under the constraint).
+This corresponds to maximizing the area under the constraints.</p></li>
+</ul>
+</div></blockquote>
+<p>Default min and max aspect ratio are both equal to 16 / 9.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="bqplot.market_map.MarketMap.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bqplot/market_map.html#MarketMap.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bqplot.market_map.MarketMap.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Public constructor</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.__init__" title="bqplot.market_map.MarketMap.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(**kwargs)</p></td>
+<td><p>Public constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_class</span></code>(className)</p></td>
+<td><p>Adds a class to the top level element of the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_traits</span></code>(**traits)</p></td>
+<td><p>Dynamically add trait attributes to the Widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">blur</span></code>()</p></td>
+<td><p>Blur the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_trait_events</span></code>(name)</p></td>
+<td><p>Get a dict of all event handlers defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_traits</span></code>(**metadata)</p></td>
+<td><p>Get a dict of all the traitlets defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Close method.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close_all</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">focus</span></code>()</p></td>
+<td><p>Focus on the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_manager_state</span></code>([drop_defaults, widgets])</p></td>
+<td><p>Returns the full state for a widget manager for embedding</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_state</span></code>([key, drop_defaults])</p></td>
+<td><p>Gets the widget state, or a piece of it.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_view_spec</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Static method, called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_control_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Class method, called when the comm-open message on the &quot;jupyter.widget.control&quot; comm channel is received</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_trait</span></code>(name)</p></td>
+<td><p>Returns True if the object has a trait with the specified name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_sync</span></code>()</p></td>
+<td><p>Hold syncing any state until the outermost context manager exits</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_trait_notifications</span></code>()</p></td>
+<td><p>Context manager for bundling trait change notifications and cross validation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">notify_change</span></code>(change)</p></td>
+<td><p>Called when a property has changed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observe</span></code>(handler[, names, type])</p></td>
+<td><p>Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.on_hover" title="bqplot.market_map.MarketMap.on_hover"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_hover</span></code></a>(callback[, remove])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_msg</span></code>(callback[, remove])</p></td>
+<td><p>(Un)Register a custom msg receive callback.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_trait_change</span></code>([handler, name, remove])</p></td>
+<td><p>DEPRECATED: Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_widget_constructed</span></code>(callback)</p></td>
+<td><p>Registers a callback to be called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code>()</p></td>
+<td><p>Open a comm to the frontend if one isn't already open.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_class</span></code>(className)</p></td>
+<td><p>Removes a class from the top level element of the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code>(content[, buffers])</p></td>
+<td><p>Sends a custom msg to the widget model in the front-end.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_state</span></code>([key])</p></td>
+<td><p>Sends the widget state, or a piece of it, to the front-end, if it exists.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_state</span></code>(sync_data)</p></td>
+<td><p>Called when a state is received from the front-end.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_trait</span></code>(name, value)</p></td>
+<td><p>Forcibly sets trait attribute, including read-only attributes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_instance</span></code>(**kwargs)</p></td>
+<td><p>This is called <strong>before</strong> self.__init__ is called.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_defaults</span></code>(*names, **metadata)</p></td>
+<td><p>Return a trait's default value or a dictionary of them</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_events</span></code>([name])</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the event handlers of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_has_value</span></code>(name)</p></td>
+<td><p>Returns True if the specified trait has a value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_metadata</span></code>(traitname, key[, default])</p></td>
+<td><p>Get metadata values for trait by key.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_values</span></code>(**metadata)</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of trait names and their values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve</span></code>(handler[, names, type])</p></td>
+<td><p>Remove a trait change handler.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve_all</span></code>([name])</p></td>
+<td><p>Remove trait change handlers of any type for the specified name.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.axes" title="bqplot.market_map.MarketMap.axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">axes</span></code></a></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.color" title="bqplot.market_map.MarketMap.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">color</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">colors</span></code></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.cols" title="bqplot.market_map.MarketMap.cols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cols</span></code></a></p></td>
+<td><p>An int trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">comm</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross_validation_lock</span></code></p></td>
+<td><p>A contextmanager for running a block with our cross validation lock set to True.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.display_text" title="bqplot.market_map.MarketMap.display_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_text</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable_hover</span></code></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable_select</span></code></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">font_style</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.freeze_tooltip_location" title="bqplot.market_map.MarketMap.freeze_tooltip_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">freeze_tooltip_location</span></code></a></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_stroke</span></code></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.groups" title="bqplot.market_map.MarketMap.groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groups</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hovered_stroke</span></code></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></p></td>
+<td><p>The traits which are synced.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">layout</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.map_margin" title="bqplot.market_map.MarketMap.map_margin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_margin</span></code></a></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.max_aspect_ratio" title="bqplot.market_map.MarketMap.max_aspect_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_aspect_ratio</span></code></a></p></td>
+<td><p>A float trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.min_aspect_ratio" title="bqplot.market_map.MarketMap.min_aspect_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_aspect_ratio</span></code></a></p></td>
+<td><p>A float trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_id</span></code></p></td>
+<td><p>Gets the model id of this widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.names" title="bqplot.market_map.MarketMap.names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">names</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.ref_data" title="bqplot.market_map.MarketMap.ref_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ref_data</span></code></a></p></td>
+<td><p>A pandas dataframe trait type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.row_groups" title="bqplot.market_map.MarketMap.row_groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">row_groups</span></code></a></p></td>
+<td><p>An int trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.rows" title="bqplot.market_map.MarketMap.rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows</span></code></a></p></td>
+<td><p>An int trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.scales" title="bqplot.market_map.MarketMap.scales"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scales</span></code></a></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selected</span></code></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selected_stroke</span></code></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.show_groups" title="bqplot.market_map.MarketMap.show_groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_groups</span></code></a></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stroke</span></code></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tabbable</span></code></p></td>
+<td><p>Is widget tabbable?</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span></code></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">title_style</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip</span></code></p></td>
+<td><p>A tooltip caption.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.tooltip_fields" title="bqplot.market_map.MarketMap.tooltip_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip_fields</span></code></a></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.tooltip_formats" title="bqplot.market_map.MarketMap.tooltip_formats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip_formats</span></code></a></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.market_map.MarketMap.tooltip_widget" title="bqplot.market_map.MarketMap.tooltip_widget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip_widget</span></code></a></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widget_types</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widgets</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "bqplot/bqplot",
+            ref: "stable",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_generate"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bqplot.axes.ColorAxis.html" class="btn btn-neutral float-left" title="bqplot.axes.ColorAxis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bqplot.interacts.BrushIntervalSelector.html" class="btn btn-neutral float-right" title="bqplot.interacts.BrushIntervalSelector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015, Bloomberg LP.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

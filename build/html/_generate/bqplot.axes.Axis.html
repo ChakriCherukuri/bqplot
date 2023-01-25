@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bqplot.axes.Axis &mdash; bqplot 0.12.30 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = "div.jupyter_cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = "div.cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="bqplot.axes.ColorAxis" href="bqplot.axes.ColorAxis.html" />
+    <link rel="prev" title="bqplot.marks.Map" href="bqplot.marks.Map.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> bqplot
+          </a>
+              <div class="version">
+                0.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_documentation.html">API Reference Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api_documentation.html#bqplot-package">BQPlot Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#figure">Figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#marks">Marks</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api_documentation.html#axes">Axes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">bqplot.axes.Axis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bqplot.axes.ColorAxis.html">bqplot.axes.ColorAxis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#market-map">Market Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#interacts">Interacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#traits-types">Traits Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#toolbar">Toolbar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_documentation.html#pyplot">Pyplot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bqplot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../api_documentation.html">API Reference Documentation</a></li>
+      <li class="breadcrumb-item active">bqplot.axes.Axis</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_generate/bqplot.axes.Axis.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bqplot-axes-axis">
+<h1>bqplot.axes.Axis<a class="headerlink" href="#bqplot-axes-axis" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="bqplot.axes.Axis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bqplot.axes.</span></span><span class="sig-name descname"><span class="pre">Axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bqplot/axes.html#Axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bqplot.axes.Axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>A line axis.</p>
+<p>A line axis is the visual representation of a numerical or date scale.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.icon">
+<span class="sig-name descname"><span class="pre">icon</span></span><a class="headerlink" href="#bqplot.axes.Axis.icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>The font-awesome icon name for this object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string (class-level attribute)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.axis_types">
+<span class="sig-name descname"><span class="pre">axis_types</span></span><a class="headerlink" href="#bqplot.axes.Axis.axis_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>A registry of existing axis types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict (class-level attribute)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.orientation">
+<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#bqplot.axes.Axis.orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orientation of the axis, either vertical or horizontal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘horizontal’, ‘vertical’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.side">
+<span class="sig-name descname"><span class="pre">side</span></span><a class="headerlink" href="#bqplot.axes.Axis.side" title="Permalink to this definition">¶</a></dt>
+<dd><p>The side of the axis, either bottom, top, left or right.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘bottom’, ‘top’, ‘left’, ‘right’} or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.label">
+<span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#bqplot.axes.Axis.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>The axis label</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string (default: ‘’)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.tick_format">
+<span class="sig-name descname"><span class="pre">tick_format</span></span><a class="headerlink" href="#bqplot.axes.Axis.tick_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>The tick format for the axis, for dates use d3 string formatting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string or None (default: ‘’)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#bqplot.axes.Axis.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scale represented by the axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Scale</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.num_ticks">
+<span class="sig-name descname"><span class="pre">num_ticks</span></span><a class="headerlink" href="#bqplot.axes.Axis.num_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>If tick_values is None, number of ticks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.tick_values">
+<span class="sig-name descname"><span class="pre">tick_values</span></span><a class="headerlink" href="#bqplot.axes.Axis.tick_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tick values for the axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><a class="headerlink" href="#bqplot.axes.Axis.offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains a scale and a value {‘scale’: scale or None,
+‘value’: value of the offset}
+If offset[‘scale’] is None, the corresponding figure scale is used
+instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict (default: {})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.label_location">
+<span class="sig-name descname"><span class="pre">label_location</span></span><a class="headerlink" href="#bqplot.axes.Axis.label_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>The location of the label along the axis, one of ‘start’, ‘end’ or
+‘middle’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘middle’, ‘start’, ‘end’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.label_color">
+<span class="sig-name descname"><span class="pre">label_color</span></span><a class="headerlink" href="#bqplot.axes.Axis.label_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color of the axis label</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Color or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.grid_lines">
+<span class="sig-name descname"><span class="pre">grid_lines</span></span><a class="headerlink" href="#bqplot.axes.Axis.grid_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>The display of the grid lines</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>{‘none’, ‘solid’, ‘dashed’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.grid_color">
+<span class="sig-name descname"><span class="pre">grid_color</span></span><a class="headerlink" href="#bqplot.axes.Axis.grid_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color of the grid lines</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Color or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.color">
+<span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#bqplot.axes.Axis.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color of the line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Color or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.label_offset">
+<span class="sig-name descname"><span class="pre">label_offset</span></span><a class="headerlink" href="#bqplot.axes.Axis.label_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label displacement from the axis line. Units allowed are ‘em’, ‘px’
+and ‘ex’. Positive values are away from the figure and negative
+values are towards the figure with respect to the axis line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string or None (default: None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.visible">
+<span class="sig-name descname"><span class="pre">visible</span></span><a class="headerlink" href="#bqplot.axes.Axis.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>A visibility toggle for the axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool (default: True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.tick_style">
+<span class="sig-name descname"><span class="pre">tick_style</span></span><a class="headerlink" href="#bqplot.axes.Axis.tick_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary containing the CSS-style of the text for the ticks.
+For example: font-size of the text can be changed by passing
+<cite>{‘font-size’: 14}</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Dict (default: {})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.tick_rotate">
+<span class="sig-name descname"><span class="pre">tick_rotate</span></span><a class="headerlink" href="#bqplot.axes.Axis.tick_rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Degrees to rotate tick labels by.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int (default: 0)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bqplot.axes.Axis.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bqplot.axes.Axis.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Public constructor</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.__init__" title="bqplot.axes.Axis.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(**kwargs)</p></td>
+<td><p>Public constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_traits</span></code>(**traits)</p></td>
+<td><p>Dynamically add trait attributes to the Widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_trait_events</span></code>(name)</p></td>
+<td><p>Get a dict of all event handlers defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_traits</span></code>(**metadata)</p></td>
+<td><p>Get a dict of all the traitlets defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Close method.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close_all</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_manager_state</span></code>([drop_defaults, widgets])</p></td>
+<td><p>Returns the full state for a widget manager for embedding</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_state</span></code>([key, drop_defaults])</p></td>
+<td><p>Gets the widget state, or a piece of it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_view_spec</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Static method, called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_control_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Class method, called when the comm-open message on the &quot;jupyter.widget.control&quot; comm channel is received</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_trait</span></code>(name)</p></td>
+<td><p>Returns True if the object has a trait with the specified name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_sync</span></code>()</p></td>
+<td><p>Hold syncing any state until the outermost context manager exits</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_trait_notifications</span></code>()</p></td>
+<td><p>Context manager for bundling trait change notifications and cross validation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">notify_change</span></code>(change)</p></td>
+<td><p>Called when a property has changed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observe</span></code>(handler[, names, type])</p></td>
+<td><p>Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_msg</span></code>(callback[, remove])</p></td>
+<td><p>(Un)Register a custom msg receive callback.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_trait_change</span></code>([handler, name, remove])</p></td>
+<td><p>DEPRECATED: Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_widget_constructed</span></code>(callback)</p></td>
+<td><p>Registers a callback to be called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code>()</p></td>
+<td><p>Open a comm to the frontend if one isn't already open.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code>(content[, buffers])</p></td>
+<td><p>Sends a custom msg to the widget model in the front-end.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_state</span></code>([key])</p></td>
+<td><p>Sends the widget state, or a piece of it, to the front-end, if it exists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_state</span></code>(sync_data)</p></td>
+<td><p>Called when a state is received from the front-end.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_trait</span></code>(name, value)</p></td>
+<td><p>Forcibly sets trait attribute, including read-only attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_instance</span></code>(**kwargs)</p></td>
+<td><p>This is called <strong>before</strong> self.__init__ is called.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_defaults</span></code>(*names, **metadata)</p></td>
+<td><p>Return a trait's default value or a dictionary of them</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_events</span></code>([name])</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the event handlers of this class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_has_value</span></code>(name)</p></td>
+<td><p>Returns True if the specified trait has a value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_metadata</span></code>(traitname, key[, default])</p></td>
+<td><p>Get metadata values for trait by key.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_values</span></code>(**metadata)</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of trait names and their values.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve</span></code>(handler[, names, type])</p></td>
+<td><p>Remove a trait change handler.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve_all</span></code>([name])</p></td>
+<td><p>Remove trait change handlers of any type for the specified name.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.axis_types" title="bqplot.axes.Axis.axis_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">axis_types</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.color" title="bqplot.axes.Axis.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">color</span></code></a></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">comm</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross_validation_lock</span></code></p></td>
+<td><p>A contextmanager for running a block with our cross validation lock set to True.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.grid_color" title="bqplot.axes.Axis.grid_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_color</span></code></a></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.grid_lines" title="bqplot.axes.Axis.grid_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_lines</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.icon" title="bqplot.axes.Axis.icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icon</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></p></td>
+<td><p>The traits which are synced.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.label" title="bqplot.axes.Axis.label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label</span></code></a></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.label_color" title="bqplot.axes.Axis.label_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_color</span></code></a></p></td>
+<td><p>A string holding a valid HTML color such as 'blue', '#060482', '#A80'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.label_location" title="bqplot.axes.Axis.label_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_location</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.label_offset" title="bqplot.axes.Axis.label_offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_offset</span></code></a></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_id</span></code></p></td>
+<td><p>Gets the model id of this widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.num_ticks" title="bqplot.axes.Axis.num_ticks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_ticks</span></code></a></p></td>
+<td><p>An int trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.offset" title="bqplot.axes.Axis.offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">offset</span></code></a></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.orientation" title="bqplot.axes.Axis.orientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orientation</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.scale" title="bqplot.axes.Axis.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.side" title="bqplot.axes.Axis.side"><code class="xref py py-obj docutils literal notranslate"><span class="pre">side</span></code></a></p></td>
+<td><p>An enum whose value must be in a given sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.tick_format" title="bqplot.axes.Axis.tick_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tick_format</span></code></a></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.tick_rotate" title="bqplot.axes.Axis.tick_rotate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tick_rotate</span></code></a></p></td>
+<td><p>An int trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.tick_style" title="bqplot.axes.Axis.tick_style"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tick_style</span></code></a></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bqplot.axes.Axis.tick_values" title="bqplot.axes.Axis.tick_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tick_values</span></code></a></p></td>
+<td><p>A numpy array trait type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bqplot.axes.Axis.visible" title="bqplot.axes.Axis.visible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">visible</span></code></a></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widget_types</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widgets</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "bqplot/bqplot",
+            ref: "stable",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_generate"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bqplot.marks.Map.html" class="btn btn-neutral float-left" title="bqplot.marks.Map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bqplot.axes.ColorAxis.html" class="btn btn-neutral float-right" title="bqplot.axes.ColorAxis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015, Bloomberg LP.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
