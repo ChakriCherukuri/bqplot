@@ -130,12 +130,49 @@ yarn run build
 ## Examples
 
 ### Using the `pyplot` API
+```py
+import bqplot.pyplot as plt
+import numpy as np
 
-[![Pyplot Screenshot](/pyplot.png)](https://github.com/bqplot/bqplot/blob/master/examples/Basic%20Plotting/Pyplot.ipynb)
+fig = plt.figure(title="Sine")
+
+# create data vectors
+x = np.linspace(-10, 10, 200)
+y = np.sin(x)
+
+# create line mark
+line = plt.plot(x, y)
+
+# renders the figure in the output cell (with toolbar for panzoom, save etc.)
+plt.show()
+```
+
+
+[![Pyplot Screenshot](/sine.png)](https://github.com/bqplot/bqplot/blob/master/examples/Basic%20Plotting/Pyplot.ipynb)
 
 ### Using the `Object Model` API
+```py
+import numpy as np
+import bqplot as bq
 
-[![Bqplot Screenshot](/bqplot.png)](https://github.com/bqplot/bqplot/blob/master/examples/Advanced%20Plotting/Advanced%20Plotting.ipynb)
+x = np.linspace(-10, 10, 200)
+y = np.sin(x)
+
+# create scales
+xs = bq.LinearScale()
+ys = bq.LinearScale()
+
+# create mark objects
+line = bq.Lines(x=x, y=y, scales={"x": xs, "y": ys})
+
+# create axes objects
+xax = bq.Axis(scale=xs, grid_lines="solid", label="X")
+yax = bq.Axis(scale=ys, orientation="vertical", grid_lines="solid")
+
+# create the figure object (renders in the output cell)
+bq.Figure(marks=[line], axes=[xax, yax], title="Sine")
+```
+[![Bqplot Screenshot](/sine.png)](https://github.com/bqplot/bqplot/blob/master/examples/Advanced%20Plotting/Advanced%20Plotting.ipynb)
 
 ## Documentation
 
