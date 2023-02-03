@@ -8,21 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://bqplot.github.io/bqplot/usage/updating-plots/">
       
+      
+        <link rel="prev" href="../object-model/">
+      
+      
+        <link rel="next" href="../figure/">
       
       <link rel="icon" href="https://raw.githubusercontent.com/bqplot/design/master/bqplot-logo-notext-nobackground.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
     
     
       
-        <title>bqplot</title>
+        <title>Updating Plots - bqplot</title>
       
     
     
-      <link rel="stylesheet" href="/bqplot/assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6b71719e.min.css">
       
         
-        <link rel="stylesheet" href="/bqplot/assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -38,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="/bqplot/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/bqplot/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#updating-single-data-attribute" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -78,7 +89,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/bqplot/." title="bqplot" class="md-header__button md-logo" aria-label="bqplot" data-md-component="logo">
+    <a href="../.." title="bqplot" class="md-header__button md-logo" aria-label="bqplot" data-md-component="logo">
       
   <img src="https://raw.githubusercontent.com/bqplot/design/master/bqplot-logo-notext-nobackground.svg" alt="logo">
 
@@ -96,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Updating Plots
             
           </span>
         </div>
@@ -193,7 +204,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/bqplot/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       bqplot
     </a>
   </li>
@@ -205,7 +216,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/bqplot/installation/" class="md-tabs__link">
+    <a href="../../installation/" class="md-tabs__link">
       Installation
     </a>
   </li>
@@ -214,13 +225,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/bqplot/usage/pyplot/" class="md-tabs__link">
+      <a href="../pyplot/" class="md-tabs__link md-tabs__link--active">
         Usage
       </a>
     </li>
@@ -236,7 +249,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/bqplot/api/figure/" class="md-tabs__link">
+      <a href="../../api/figure/" class="md-tabs__link">
         API Documentation
       </a>
     </li>
@@ -249,7 +262,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/bqplot/contributing/" class="md-tabs__link">
+    <a href="../../contributing/" class="md-tabs__link">
       Contributing
     </a>
   </li>
@@ -276,7 +289,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/bqplot/." title="bqplot" class="md-nav__button md-logo" aria-label="bqplot" data-md-component="logo">
+    <a href="../.." title="bqplot" class="md-nav__button md-logo" aria-label="bqplot" data-md-component="logo">
       
   <img src="https://raw.githubusercontent.com/bqplot/design/master/bqplot-logo-notext-nobackground.svg" alt="logo">
 
@@ -306,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         bqplot
       </a>
     </li>
@@ -321,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/installation/" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -334,18 +347,20 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -363,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/pyplot/" class="md-nav__link">
+      <a href="../pyplot/" class="md-nav__link">
         Pyplot
       </a>
     </li>
@@ -377,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/object-model/" class="md-nav__link">
+      <a href="../object-model/" class="md-nav__link">
         Object Model
       </a>
     </li>
@@ -389,11 +404,62 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/bqplot/usage/updating-plots/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Updating Plots
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Updating Plots
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#updating-single-data-attribute" class="md-nav__link">
+    Updating Single Data Attribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-multiple-data-attributes" class="md-nav__link">
+    Updating Multiple Data Attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animations" class="md-nav__link">
+    Animations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -405,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/figure/" class="md-nav__link">
+      <a href="../figure/" class="md-nav__link">
         Figure
       </a>
     </li>
@@ -419,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/scales/" class="md-nav__link">
+      <a href="../scales/" class="md-nav__link">
         Scales
       </a>
     </li>
@@ -433,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/axes/" class="md-nav__link">
+      <a href="../axes/" class="md-nav__link">
         Axes
       </a>
     </li>
@@ -476,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/" class="md-nav__link">
+      <a href="../marks/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -490,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/lines/" class="md-nav__link">
+      <a href="../marks/lines/" class="md-nav__link">
         Lines
       </a>
     </li>
@@ -504,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/bars/" class="md-nav__link">
+      <a href="../marks/bars/" class="md-nav__link">
         Bars
       </a>
     </li>
@@ -518,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/scatter/" class="md-nav__link">
+      <a href="../marks/scatter/" class="md-nav__link">
         Scatter
       </a>
     </li>
@@ -532,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/pie/" class="md-nav__link">
+      <a href="../marks/pie/" class="md-nav__link">
         Pie
       </a>
     </li>
@@ -546,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/maps/" class="md-nav__link">
+      <a href="../marks/maps/" class="md-nav__link">
         Map
       </a>
     </li>
@@ -560,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/heatmap/" class="md-nav__link">
+      <a href="../marks/heatmap/" class="md-nav__link">
         Heatmap
       </a>
     </li>
@@ -574,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/marks/market/" class="md-nav__link">
+      <a href="../marks/market/" class="md-nav__link">
         Marketmap
       </a>
     </li>
@@ -624,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/interactions/mark-interactions/" class="md-nav__link">
+      <a href="../interactions/mark-interactions/" class="md-nav__link">
         Mark Interactions
       </a>
     </li>
@@ -638,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/interactions/selectors/" class="md-nav__link">
+      <a href="../interactions/selectors/" class="md-nav__link">
         Selectors
       </a>
     </li>
@@ -652,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/interactions/panzoom/" class="md-nav__link">
+      <a href="../interactions/panzoom/" class="md-nav__link">
         Panzoom
       </a>
     </li>
@@ -666,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/interactions/hand-draw/" class="md-nav__link">
+      <a href="../interactions/hand-draw/" class="md-nav__link">
         Handdraw
       </a>
     </li>
@@ -716,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/advanced/linking-ipywidgets/" class="md-nav__link">
+      <a href="../advanced/linking-ipywidgets/" class="md-nav__link">
         Linking With ipywidgets
       </a>
     </li>
@@ -730,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/advanced/dashboards/" class="md-nav__link">
+      <a href="../advanced/dashboards/" class="md-nav__link">
         Dashboarding
       </a>
     </li>
@@ -744,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/usage/advanced/compound-widgets/" class="md-nav__link">
+      <a href="../advanced/compound-widgets/" class="md-nav__link">
         Compound Widgets
       </a>
     </li>
@@ -800,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/figure/" class="md-nav__link">
+      <a href="../../api/figure/" class="md-nav__link">
         Figure
       </a>
     </li>
@@ -814,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/market_map/" class="md-nav__link">
+      <a href="../../api/market_map/" class="md-nav__link">
         MarketMap
       </a>
     </li>
@@ -828,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/toolbar/" class="md-nav__link">
+      <a href="../../api/toolbar/" class="md-nav__link">
         Toolbar
       </a>
     </li>
@@ -842,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/scales/" class="md-nav__link">
+      <a href="../../api/scales/" class="md-nav__link">
         Scales
       </a>
     </li>
@@ -856,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/marks/" class="md-nav__link">
+      <a href="../../api/marks/" class="md-nav__link">
         Marks
       </a>
     </li>
@@ -870,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/axes/" class="md-nav__link">
+      <a href="../../api/axes/" class="md-nav__link">
         Axes
       </a>
     </li>
@@ -884,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/interactions/" class="md-nav__link">
+      <a href="../../api/interactions/" class="md-nav__link">
         Interactions
       </a>
     </li>
@@ -898,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/api/pyplot/" class="md-nav__link">
+      <a href="../../api/pyplot/" class="md-nav__link">
         Pyplot
       </a>
     </li>
@@ -920,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/bqplot/contributing/" class="md-nav__link">
+      <a href="../../contributing/" class="md-nav__link">
         Contributing
       </a>
     </li>
@@ -945,6 +1011,35 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#updating-single-data-attribute" class="md-nav__link">
+    Updating Single Data Attribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-multiple-data-attributes" class="md-nav__link">
+    Updating Multiple Data Attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animations" class="md-nav__link">
+    Animations
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -955,19 +1050,80 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+                  
 
-<div class="row-fluid">
-    <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center">We are actively working on documentation pages. Please come back
-            soon!</p>
-        <p style="text-align: center">
-            <a class="md-button md-button--primary" onclick="history.back()">Go Back</a>
-        </p>
-    </div>
+  
+  
+
+
+
+  <h1>Updating Plots</h1>
+
+<p>In <code>bqplot</code> almost all the attributes of plotting widgets (Figure, Mark, Scale, Axis) are implemented as <strong>traitlets</strong>, so the plots are responsive to data updates. All you need to do is update the attributes <strong>in place</strong> without having to recreate the <code>figure</code> and <code>mark</code> objects. </p>
+<p><strong>Updating the attributes of <code>figure</code> and <code>marks</code> automatically triggers a re-draw of the plots on the front-end.</strong></p>
+<p>Let's look at an example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">curve</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">fig</span>
+</code></pre></div>
+<h4 id="updating-single-data-attribute">Updating Single Data Attribute</h4>
+<p>Let's look at the correct (and incorrect) way of updating the plots:</p>
+<div class="admonition success">
+<p class="admonition-title">Correct</p>
+<p><strong>Only</strong> update the <code>figure</code> and <code>mark</code> attributes like so:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">curve</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">fig</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Cosine&quot;</span>
+</code></pre></div></p>
 </div>
+<div class="admonition failure">
+<p class="admonition-title">Incorrect</p>
+<p><strong>Do not</strong> create <code>figure</code> and <code>mark</code> objects again to update the plots!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Cosine&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">curve</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</code></pre></div></p>
+</div>
+<h4 id="updating-multiple-data-attributes">Updating Multiple Data Attributes</h4>
+<p>We can update multiple attributes of the <code>mark</code> object simultaneously by using the <code>hold_sync</code> method like so. (This makes only one round trip from the python kernel to the front end)</p>
+<div class="admonition success">
+<p class="admonition-title">Efficient</p>
+<p>Only <strong>one</strong> network trip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># use the hold_sync() context manager</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">with</span> <span class="n">curve</span><span class="o">.</span><span class="n">hold_sync</span><span class="p">():</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">curve</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">curve</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Inefficient</p>
+<p>Makes <strong>two</strong> network trips
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">curve</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">curve</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<h4 id="animations">Animations</h4>
+<p>We can enable <strong>animated</strong> data attributes by passing in <code>animation_duration</code> (in milliseconds) to the figure. Let's look at an example to update a scatter plot</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="hll"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">animation_duration</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># 1000 ms or 1s</span>
+</span><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">scat</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">fig</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># update the scatter plot to use animations (1s duration)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">with</span> <span class="n">scat</span><span class="o">.</span><span class="n">hold_sync</span><span class="p">():</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">scat</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">scat</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 
 
+
+
+
+                
               </article>
             </div>
           
@@ -999,10 +1155,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/bqplot/", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "/bqplot/assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/bqplot/assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
     
   </body>
